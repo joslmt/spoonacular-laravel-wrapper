@@ -62,8 +62,23 @@ php artisan vendor:publish --tag=spoonacular
 Finally we have two options, first we could have a default value of API_KEY, within `config/spoonacular.php` or as well we can add in our `.env` a new environment variable like `API_KEY = ""`
     
 ### From Packagist
+We need to pull the package from packagist to our Laravel project.
 
-**Under Construction**
+```
+composer require josmlt/spoonacular-laravel-wrapper
+```
+
+After a correct installation, we need to publish a custom config file, execute:
+```
+php artisan vendor:publish
+```
+
+Finally we move into :
+```
+config/spoonacular.php
+```
+
+And add our api key from [Spoonacular](https://spoonacular.com/), or alternative you can create a new environment variable named like `API_KEY`.
 
 ## How to use it
 If we want to get recipes with tomato, for example, we just need to search recipes with this keyword, type:
