@@ -2,12 +2,13 @@
 
 namespace Josmlt\SpoonacularLaravelWrapper\Facades;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 /**
  * Wrapp all Facade logic. Make requests to spoonacular API returning an object 
  * or an array of data.
  * 
  * @see https://spoonacular.com/food-api 
- * 
  * @author Jose <joseluis95123@gmail.com>
  */
 class Spoonacular
@@ -48,6 +49,24 @@ class Spoonacular
         );
     }
 
+    /**
+     * Retrieve the glycemic index for a list of ingredients and compute
+     * the individual and total glycemic load.
+     *
+     * @param string[] $ingredients
+     *
+     * @return object Request data.
+     *
+     * @throws GuzzleException
+     *
+     * @see https://spoonacular.com/food-api/docs#Compute-Glycemic-Load
+     */
+    public function computeGlycemicLoad(array $ingredients):object {
+        return $this->getData(
+            'food/ingredients/glycemicLoad',
+            ['ingredients' => $ingredients]
+        );
+    }
 
     /**
      * Search through hundreds of thousands of recipes using advanced filtering.
