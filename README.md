@@ -51,7 +51,7 @@ Next step is require the package to our project, execute :
 composer require josmlt/spoonacular-laravel-wrapper
 ```
 
-We'll see the messagge: `Installing josmlt/spoonacular-laravel-wrapper (dev-master): Junctioning from ../spoon-wrapper`
+We'll see the message: `Installing josmlt/spoonacular-laravel-wrapper (dev-master): Junctioning from ../spoon-wrapper`
 
 Then execute the follow command, it publishes the config file :
 
