@@ -13,6 +13,11 @@
 return [
     'api_key' => env('API_KEY', ''),
 
+    'cache' => [
+        'enabled' => env('SPOONACULAR_CACHE_ENABLED', false),
+        'ttl' => env('SPOONACULAR_CACHE_TTL', 60),
+    ],
+
     'providers' => [
         /**
          * Laravel wrapper for Spoonacular API.

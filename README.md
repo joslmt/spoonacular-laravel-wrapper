@@ -103,6 +103,14 @@ Or get random recipes :
 Spoonacular::getRandomRecipes();
 ```
 
+### Cache
+
+Spoonacular allows caching user requests for one hour (https://spoonacular.com/food-api/terms).
+
+To enable set environment variable `SPOONACULAR_CACHE_ENABLED` to true. To change how long to cache set `SPOONACULAR_CACHE_TTL` (default: 60).
+
+Caching is handled by Laravel's Cache service (https://laravel.com/docs/8.x/cache).
+
 ## Testing
 
 **Under Construction**

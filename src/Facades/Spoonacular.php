@@ -2,6 +2,9 @@
 
 namespace Josmlt\SpoonacularLaravelWrapper\Facades;
 
+use Cache;
+use GuzzleHttp\Exception\GuzzleException;
+
 /**
  * Wrapp all Facade logic. Make requests to spoonacular API returning an object 
  * or an array of data.
@@ -29,17 +32,52 @@ class Spoonacular
     }
 
     /**
-     * Get data about the specify endpoint.
+     * Get data from the specific endpoint with cache
      *
-     * @param string $endpoint Where request will be send.
-     * @param array $query Asociative array of data.
-     * 
+     * @param string     $endpoint Where request will be send.
+     * @param array|null $query    Associative array of data.
+     *
      * @return object|array Request data.
+     *
+     * @throws GuzzleException
      */
     private function getData(string $endpoint, array $query = null): object|array
     {
-        $api_key = ['apiKey' => config('spoonacular.api_key')];
-        $query == null ? $queryParameters = $api_key : $queryParameters = array_merge($api_key, $query);
+        $shouldCache = config('spoonacular.cache.enabled', false);
+
+        $cacheKey = $endpoint . '-' . serialize($query);
+        $cacheTtl = config('spoonacular.cache.ttl', 60);
+
+        if ($shouldCache) {
+            $response = Cache::remember(
+                $cacheKey,
+                $cacheTtl,
+                function() use ($endpoint, $query) {
+                    return $this->getDataFromClient($endpoint, $query);
+                }
+            );
+        } else {
+            $response = $this->getDataFromClient($endpoint, $query);
+        }
+
+        return $response;
+    }
+
+    /**
+     * Get data from the specific endpoint.
+     *
+     * @param string     $endpoint Where request will be send.
+     * @param array|null $query    Associative array of data.
+     *
+     * @return object|array Request data.
+     *
+     * @throws GuzzleException
+     */
+    private function getDataFromClient(string $endpoint, array $query = null): object|array
+    {
+        $apiKey = ['apiKey' => config('spoonacular.api.key')];
+
+        $query == null ? $queryParameters = $apiKey : $queryParameters = array_merge($apiKey, $query);
 
         return json_decode(
             $this->client
