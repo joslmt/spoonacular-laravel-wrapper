@@ -7,15 +7,8 @@
      </a>
 </p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
 # Spoonacular Laravel Wrapper
-First of all, the purpose of this Laravel package is learn how Facades and packages works. 
+First, the purpose of this Laravel package is learn how Facades and packages works. 
 This package uses Facades to request resources from Spoonacular API, like recipes, random recipes, nutrients and offers different sort options like for calories, intolerances etc.
 
 ## Steps to installation
@@ -73,7 +66,7 @@ After a correct installation, we need to publish a custom config file, execute:
 php artisan vendor:publish
 ```
 
-Finally we move into :
+Finally, we move into :
 ```
 config/spoonacular.php
 ```
