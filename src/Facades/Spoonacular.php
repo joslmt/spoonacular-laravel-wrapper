@@ -38,8 +38,8 @@ class Spoonacular
      */
     private function getData(string $endpoint, array $query = null): object|array
     {
-        $api_key = ['apiKey' => config('spoonacular.api_key')];
-        $query == null ? $queryParameters = $api_key : $queryParameters = array_merge($api_key, $query);
+        $apiKey = ['apiKey' => config('spoonacular.api.key')];
+        $query == null ? $queryParameters = $apiKey : $queryParameters = array_merge($apiKey, $query);
 
         return json_decode(
             $this->client

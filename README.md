@@ -44,7 +44,7 @@ Next step is require the package to our project, execute :
 composer require josmlt/spoonacular-laravel-wrapper
 ```
 
-We'll see the messagge: `Installing josmlt/spoonacular-laravel-wrapper (dev-master): Junctioning from ../spoon-wrapper`
+We'll see the message: `Installing josmlt/spoonacular-laravel-wrapper (dev-master): Junctioning from ../spoon-wrapper`
 
 Then execute the follow command, it publishes the config file :
 
@@ -52,7 +52,7 @@ Then execute the follow command, it publishes the config file :
 php artisan vendor:publish --tag=spoonacular
 ```
 
-Finally we have two options, first we could have a default value of API_KEY, within `config/spoonacular.php` or as well we can add in our `.env` a new environment variable like `API_KEY = ""`
+Finally we have two options, first we could have a default value of SPOONACULAR_API_KEY, within `config/spoonacular.php` or as well we can add in our `.env` a new environment variable like `SPOONACULAR_API_KEY = ""`
     
 ### From Packagist
 We need to pull the package from packagist to our Laravel project.
@@ -71,7 +71,7 @@ Finally, we move into :
 config/spoonacular.php
 ```
 
-And add our api key from [Spoonacular](https://spoonacular.com/), or alternative you can create a new environment variable named like `API_KEY`.
+And add our api key from [Spoonacular](https://spoonacular.com/), or alternative you can create a new environment variable named like `SPOONACULAR_API_KEY`.
 
 ## How to use it
 If we want to get recipes with tomato, for example, we just need to search recipes with this keyword, type:

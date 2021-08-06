@@ -11,7 +11,9 @@
 */
 
 return [
-    'api_key' => env('API_KEY', ''),
+    'api' => [
+        'key' => env('SPOONACULAR_API_KEY', ''),
+    ],
 
     'providers' => [
         /**
