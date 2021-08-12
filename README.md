@@ -7,7 +7,11 @@
      </a>
 </p>
 
+<<<<<<< HEAD
 # Spoonacular Laravel Wrapper  :memo:
+=======
+# Spoonacular Laravel Wrapper
+>>>>>>> 8ab68d957844cb49054eb686d4e0535e80ad1b64
 First, the purpose of this Laravel package is learn how Facades and packages works. 
 This package uses Facades to request resources from Spoonacular API, like recipes, random recipes, nutrients and offers different sort options like for calories, intolerances etc.
 

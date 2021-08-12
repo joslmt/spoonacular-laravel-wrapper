@@ -6,11 +6,11 @@ namespace Josmlt\SpoonacularLaravelWrapper\Tests;
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
-     * Default configuration I want to set, like API_KEY for testing
+     * Default configuration I want to set, like SPOONACULAR_API_KEY for testing
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('spoonacular.api_key', env('API_KEY', ''));
+        $app['config']->set('spoonacular.api.key', env('SPOONACULAR_API_KEY', ''));
     }
 
     /**
