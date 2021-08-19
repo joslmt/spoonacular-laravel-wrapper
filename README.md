@@ -7,13 +7,21 @@
      </a>
 </p>
 
-<<<<<<< HEAD
-# Spoonacular Laravel Wrapper  :memo:
-=======
-# Spoonacular Laravel Wrapper
->>>>>>> 8ab68d957844cb49054eb686d4e0535e80ad1b64
-First, the purpose of this Laravel package is learn how Facades and packages works. 
-This package uses Facades to request resources from Spoonacular API, like recipes, random recipes, nutrients and offers different sort options like for calories, intolerances etc.
+# Spoonacular Laravel Wrapper 
+- [Spoonacular Laravel Wrapper](#spoonacular-laravel-wrapper)
+- [What is :memo:](#what-is-memo)
+  - [Purpose](#purpose)
+  - [Steps to installation :information_source:](#steps-to-installation-information_source)
+    - [Package Locally Development :information_source:](#package-locally-development-information_source)
+    - [From Packagist :information_source:](#from-packagist-information_source)
+  - [How to use it :question:](#how-to-use-it-question)
+  - [Testing :heavy_check_mark:](#testing-heavy_check_mark)
+
+# What is :memo:
+It's a package that uses Facades to request resources from Spoonacular API, like recipes, random recipes, nutrients and offers different sort options like for calories, intolerances etc.
+
+## Purpose
+It was made to learn how Facades and Laravel packages works. 
 
 ## Steps to installation :information_source:
 It's necessary register in [Spoonacular](https://spoonacular.com/) and get an api key.
