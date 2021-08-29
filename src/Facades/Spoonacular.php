@@ -174,4 +174,29 @@ class Spoonacular
     {
         return $this->getData("food/ingredients/{$id}/information");
     }
+
+    /**
+     * Get the total X ingredient required, in the specific unit, to reach a 
+     * certain  nutritional goal.
+     *
+     * @param string $id Ingredient to set the goal.
+     * @param string $nutrient It can be fat, protein, fiber ...
+     * @param string $target
+     * @param string $unit By default is 'oz'. Other e.g it's 'mg' or 'g'.
+     * 
+     * @return object
+     * @see https://spoonacular.com/food-api/docs#Compute-Ingredient-Amount
+     * @see https://spoonacular.com/food-api/docs#Nutrition
+     */
+    public function getRequireNutrients(string $id, string $nutrient, string $target, string $unit = 'oz'): object
+    {
+        return $this->getData(
+            "food/ingredients/{$id}/amount",
+            [
+                'nutrient' => $nutrient,
+                'target' => $target,
+                'unit' => $unit,
+            ]
+        );
+    }
 }

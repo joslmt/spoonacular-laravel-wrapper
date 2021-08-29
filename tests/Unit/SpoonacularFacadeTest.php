@@ -129,4 +129,15 @@ class SpoonacularFacadeTest extends TestCase
         $this->assertObjectHasAttribute('image', $data);
         $this->assertObjectHasAttribute('consistency', $data);
     }
+
+    /**
+     * @test 
+     */
+    public function return_an_object_of_total_amount_food_to_get_the_required_nutrients()
+    {
+        $data = \Spoonacular::getRequireNutrients('9266', 'protein', '50', 'g');
+        $this->assertIsObject($data);
+        $this->assertObjectHasAttribute('amount', $data);
+        $this->assertObjectHasAttribute('unit', $data);
+    }
 }
