@@ -114,3 +114,5 @@ This package provides a few tests, the objective is to get more confident using 
 
 Within the package, execute the follow : 
 `vendor/bin/phpunit tests/Unit/SpoonacularFacadeTest.php`
+
+Don't forget execute `composer install` after download or clone the project, also get a valid APIKEY.
