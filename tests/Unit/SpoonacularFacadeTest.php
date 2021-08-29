@@ -116,4 +116,17 @@ class SpoonacularFacadeTest extends TestCase
         $this->assertObjectHasAttribute('name', $data->results[1]);
         $this->assertObjectHasAttribute('name', $data->results[2]);
     }
+
+    /**
+     * @test
+     */
+    public function get_complex_ingredients_info_returning_an_object()
+    {
+        // Pineapple info.
+        $data = \Spoonacular::getIngredientInfo('9266');
+        $this->assertIsObject($data);
+        $this->assertObjectHasAttribute('name', $data);
+        $this->assertObjectHasAttribute('image', $data);
+        $this->assertObjectHasAttribute('consistency', $data);
+    }
 }

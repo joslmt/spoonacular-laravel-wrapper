@@ -61,7 +61,8 @@ class Spoonacular
      *
      * @see https://spoonacular.com/food-api/docs#Compute-Glycemic-Load
      */
-    public function computeGlycemicLoad(array $ingredients):object {
+    public function computeGlycemicLoad(array $ingredients): object
+    {
         return $this->getData(
             'food/ingredients/glycemicLoad',
             ['ingredients' => $ingredients]
@@ -158,5 +159,19 @@ class Spoonacular
             return $this->getData('food/ingredients/search', ['query' => $information]);
         }
         return $this->getData('food/ingredients/search', $information);
+    }
+
+    /**
+     * Use an ingredient id to get all available information about an 
+     * ingredient, such as its image and supermarket aisle.
+     *
+     * @param string $id Ingredient ID.
+     * @return object Request data.
+     * 
+     * @see https://spoonacular.com/food-api/docs#Get-Ingredient-Information 
+     */
+    public function getIngredientInfo(string $id): object
+    {
+        return $this->getData("food/ingredients/{$id}/information");
     }
 }
